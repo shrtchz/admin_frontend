@@ -1,0 +1,11 @@
+.header{
+    background-color: var(--sidebar);
+    width: 100%;
+    padding: 0;
+    height: 40px;
+    
+  }
+  .trash{
+    margin: 5px;
+    color: #fff;
+  }

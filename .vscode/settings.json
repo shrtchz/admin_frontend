@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "notebook.formatOnSave.enabled": true,
+    "files.autoSave": "afterDelay",
+    "files.saveConflictResolution": "overwriteFileOnDisk",
+    "files.autoSaveDelay": 10,
+    "editor.foldingImportsByDefault": true
+}

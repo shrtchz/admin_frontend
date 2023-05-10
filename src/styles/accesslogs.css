@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.checkbox-table {
+    border-collapse:collapse;
+    width: 100%;
+    /* margin:0; */
+  }
+  
+  .checkbox-table th,
+  .checkbox-table td {
+    padding: 4px;
+    text-align: left;
+    border: none;
+  }
+  .checkbox-table td{
+    /* color: ; */
+    height: 20px;
+    font-size: 14px;
+  }
+  .checkbox-table th {
+    background-color:#E3E2D6;
+    color: #887332;
+  }
+  .checkbox-table tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+  /* .userid{
+    display: flex;
+    flex-direction: column;
+  } */
+  
+  .checkbox-table tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  .checkbox-table input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
