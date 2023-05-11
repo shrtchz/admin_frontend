@@ -10,7 +10,7 @@ import * as RiIcons from  'react-icons/fa'
 import * as CiIcons from 'react-icons/ci'
 import * as BiIcons from 'react-icons/bi'
 import * as MdIcons from 'react-icons/md'
-import { SidebarData,SidebarDash } from "./SidebarData";
+import { SidebarData } from "./SidebarData";
 import SubMenu from './SubMenu'
 import Headers from "../Headers";
 
@@ -33,56 +33,11 @@ const SideBar = ({isOpen,children,item}) => {
    
    <div className="container">
     <div className={`sidebar ${isOpen ? 'close' : ''}`}>
-   <>
-    <div className="dash">
-    {SidebarDash.map((item, index) =>{
-        return(
-          <>
-          <NavLink onClick={item.subMenu && showSubmenu} to={item.path} key={index} className="link" activeclassname="active">
-           <div className="" style={{display:'flex', heigh:'100px'}}>
-           <div className="icon" >
-              {item.icon}
-            </div>
-            <span className="label" style={{display: isOpen ?'none' : 'block'}}>
-              {item.title}
-            </span>
-           </div>
-           <div>
-            {
-              item.subMenu && submenu 
-              ? item.iconOpened 
-              : item.subMenu 
-              ? item.iconClosed
-               : null
-            }
-           </div>
-          </NavLink>
-          {/* {
-            submenu && item.subMenu.map((item, index)=>{
-              return(
-                <NavLink to={item.path} key={index}>
-                <div className="icon" >
-                   {item.icon}
-                </div>
-              <span className="label" style={{display: isOpen ?'none' : 'block'}}>
-                {item.title}
-                </span>
-                </NavLink>
-              )
-            })
-          } */}
-          </>
-          
-        )
-      })}
-    </div>
-    
-       <div className="data">
        {SidebarData.map((item, index) =>{
         return(
           <>
           <NavLink onClick={item.subMenu && showSubmenu} to={item.path} key={index} className="link" activeclassname="active">
-           <div className="" style={{display:'flex', heigh:'200px'}}>
+           <div className="" style={{display:'flex'}}>
            <div className="icon" >
               {item.icon}
             </div>
@@ -117,14 +72,12 @@ const SideBar = ({isOpen,children,item}) => {
           </>
           
         )
-      })}
-       </div> 
-   </>
+      })} 
     </div>
     
     <main>
-    {/* <Headers/> */}
-      {/* {children} */}
+    <Headers/>
+      {children}
     </main>
       <Outlet/>
    </div>

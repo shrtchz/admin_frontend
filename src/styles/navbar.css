@@ -1,16 +1,14 @@
 .navbar{
     background-color: var(--nav);
     height: 50px;
-    width:100% !important;
+    width:100%;
     color:var(--white);
-    padding-left: 50px;
-    
     /* padding: 0.5rem calc((100% - 1500px) / 2); */
     /* padding: 0 .8rem; */
-    /* display: flex; */
+    display: flex;
     /* flex-wrap: wrap; */
-    /* align-items: center; */
-    /* justify-content:flex-start; */
+    align-items: center;
+    justify-content:flex-start;
     /* padding-left: 20px; */
     /* align-items: center; */
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05), 0px 2px 1px rgba(0, 0, 0, 0.25);
@@ -26,14 +24,14 @@
     padding-left: 40px;
 }
  .navbar a {
-  /* display: flex;
+  display: flex;
   align-items: center;
-  text-decoration: none; */
+  text-decoration: none;
   color: var(--white);
   /* flex-direction: row; */
   width:10rem;
   /* margin-left: 2rem; */
-  /* height: 3rem; */
+  height: 3rem;
  }
  .menu-bar{
   width: 0rem;
@@ -45,10 +43,10 @@
 }
 .navbar .logo{
  /* margin-left:-4rem !important */
- width: 0px;
+ width: 160px;
  /* margin-left: 20px; */
- /* margin-left: -10px; */
- /* height: 40px; */
+ margin-left: -10px;
+ height: 40px;
 }
 .navbar .right{
     padding-left: 50px;
@@ -70,17 +68,15 @@
     border-radius: 5px;
     padding:5px 10px;
     margin: 0 rem 0 2rem;
-    width: 80%
+    width: 500px;
 }
-.link{
-  height:40px;
-}
+
 
 .search input[type='text'], .search input[type='text']:focus{
     border: none;
     /* margin-left: 10px; */
     outline:none;
-    /* width:90%; */
+    width:90%;
     /* padding: 3px; */
     background-color: var(--background);
     margin: -8px 10px;
@@ -164,32 +160,25 @@
   }
   
   .userInfo{
-  /* display: flex;
-  align-self: center;
-  justify-self: center;
-  flex-direction: row;
-  margin-top: 14px;
-  width: 30px; */
-    
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    /* margin-left: 40px; */
+    padding-left: 50px;
   }
-  .userInfo .text{
-    /* font-size: 1rem;
-    white-space: nowrap; */
-    /* text-align: center; */
-    /* padding-top: 11px; */
-    /* font-size: 10px; */
+  .userInfo p{
+    font-size: 1rem;
+    white-space: nowrap;
   }
-   @media (max-width:576px) {
+  @media (max-width:768px) {
     .search{display: none;}
     .navbar .logo{
         width:120px
     }
-    
   }
-  /*@media (max-width:1024px) {
+  @media (max-width:1024px) {
     .search{width:20rem;}
     .navbar .logo{
         width:120px
     }
-} */
-
+}

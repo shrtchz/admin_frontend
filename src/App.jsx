@@ -1,8 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
+import viteLogo from "/vite.svg";
 // import './App.css'
-import 'bootstrap/dist/css/bootstrap.css';
 import Login from "./pages/Login";
 import Subadmin from "./pages/Subadmin";
 import Home from "./components/contents/Home";
@@ -43,14 +42,14 @@ function App() {
     //   </Routes>
     // </Router>
     <>
-    {/* {
+    {
       isLoggedIn ? (
-      
+        <>
         <Dashboard /> 
-
+       {/* <ProtectedRoute/>  */}
+        </>
       ): <Login  onLogin={setIsLoggedIn}/>
-    } */}
-    <Dashboard/>
+    }
     </>
    
   );

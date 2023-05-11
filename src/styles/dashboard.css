@@ -11,12 +11,12 @@
 }
 
 body{
-    /* position: relative;
+    position: relative;
     background-color:#F8F8F8;
     padding: 0;
     margin: 0;
-    height:100vh; */
-    /* width: 100vw; */
+    height:100vh;
+    width: 100vw;
     /* overflow: hidden; */
 }
 
@@ -44,12 +44,12 @@ body{
   .activity{
     padding-right: 2rem;
   }
-/* @media(max-width:1024){
+@media(max-width:1024){
   .navbar a{
     width: auto;
   }
-} */
-  /* @media (max-width: 767px){
+}
+  @media (max-width: 767px){
     .clock{
       width:8rem;
       margin: 0 0.8rem;
@@ -57,20 +57,20 @@ body{
     .navbar{
       width: 100%;
       display: flex;
-     
+      /* justify-content: space-between; */
     }
     .navbar a{
       width: 9rem;
     }
     .search{
       display: none;
-   
+      /* background-color: green; */
     }
     .switch{
       display: none;
     }
     
-  } */
+  }
 
   .ChatBox {
     border: 1px solid #ccc;

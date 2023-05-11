@@ -10,11 +10,7 @@
     display: flex;
     /* padding-top: 40px; */
     /* position: fixed; */
-    /* height: calc(100vh - 80px); */
-    position: fixed;
-    height: calc(100vh - 90px);
-    width: 100%;
-    padding: 0;
+    height: calc(100vh - 80px);
   }
   main{
     width: 100%;
@@ -27,77 +23,51 @@
    justify-content: flex-start;
 align-self: center; 
 /* padding-left: 20px; */
-    text-align:center ;
+    /* text-align:center ; */
     transition:850ms;
-   /* height: ; */
+   height: 100%;
    padding-top:10px;
    background-color: var(--sidebar);
-   width: 440px;
+   width: 250px;
    /* position: fixed; */
    /* left: -250px; */
    /* padding: 0 20px; */
-   overflow-y:scroll !important;
-   margin-top: 90px;
+   /* overflow-y:scroll !important; */
   }
   .sidebar.close{
     /* width:20px; */
-    width: 50px;
-    padding-left: -10px;
-   overflow-y:hidden !important;
-
+    width: 30px;
+    padding-left: -30px;
 } 
   
   .close.label{
     opacity: 0;
   }
-  .dash{
-    /* height: 80px; */
-    padding-top: 10px;
-  }
-  .data{
-    height:500px;
-    margin-top: 50px;
-    padding-top:10px;
-    /* height: 100vh; */
-  }
-  .dash .link, .data .link{
+  .link{
     display: flex;
-    /* height: 60px !important; */
+    height: 31px !important;
     width: 100%;
-    color: var(--white);
+    color: var(--link);
     text-decoration: none;
     list-style: none;
     align-self: center;
-    align-items: center;
     /* justify-content: center; */
     /* padding: 0 1.25rem; */
     /* padding: 3px 0; */
     /* text-align: ; */
-    /* padding-top: 20px; */
-    /* font-size: 3rem; */
-    padding: 10px 0;
-  
-    
-  }
-  .data .link{
-    height: 30px;
-    margin: 40px 0;
-    padding-top: 0px;
+    padding-top: 5px;
   }
    .label{
     padding-left: 0.4rem;
     font-size: 1rem;
 
   }
-.data .link:hover, .dash .link:hover{
-    color: var(--white);
+.link:hover{
+    /* color: var(--primary); */
     background-color:var(--textcolor);
     border-left: 4px solid var(--primary);
     transition: none;
     padding-left: 0;
-}
-.link:hover{
-  /* color: var(--white); */
 }
 .active{
     color: var(--primary);
@@ -109,13 +79,13 @@ align-self: center;
 }
 .icon{
     /* height: 1rem; */
-    padding-left: 80px;
+    padding-left: 40px;
     /* width: 100%; */
 }
 
 .sidebarnav{
 background-color:var(--sidebar);
-/* height:calc(100% - 60px); */
+height:calc(100% - 60px);
 width:250px;
 display:flex;
 justify-content:center;
