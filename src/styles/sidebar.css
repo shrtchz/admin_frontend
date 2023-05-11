@@ -10,7 +10,11 @@
     display: flex;
     /* padding-top: 40px; */
     /* position: fixed; */
-    height: calc(100vh - 80px);
+    /* height: calc(100vh - 80px); */
+    position: fixed;
+    height: calc(100vh - 90px);
+    width: 100%;
+    padding: 0;
   }
   main{
     width: 100%;
@@ -23,51 +27,77 @@
    justify-content: flex-start;
 align-self: center; 
 /* padding-left: 20px; */
-    /* text-align:center ; */
+    text-align:center ;
     transition:850ms;
-   height: 100%;
+   /* height: ; */
    padding-top:10px;
    background-color: var(--sidebar);
-   width: 250px;
+   width: 440px;
    /* position: fixed; */
    /* left: -250px; */
    /* padding: 0 20px; */
-   /* overflow-y:scroll !important; */
+   overflow-y:scroll !important;
+   margin-top: 90px;
   }
   .sidebar.close{
     /* width:20px; */
-    width: 30px;
-    padding-left: -30px;
+    width: 50px;
+    padding-left: -10px;
+   overflow-y:hidden !important;
+
 } 
   
   .close.label{
     opacity: 0;
   }
-  .link{
+  .dash{
+    /* height: 80px; */
+    padding-top: 10px;
+  }
+  .data{
+    height:500px;
+    margin-top: 50px;
+    padding-top:10px;
+    /* height: 100vh; */
+  }
+  .dash .link, .data .link{
     display: flex;
-    height: 31px !important;
+    /* height: 60px !important; */
     width: 100%;
-    color: var(--link);
+    color: var(--white);
     text-decoration: none;
     list-style: none;
     align-self: center;
+    align-items: center;
     /* justify-content: center; */
     /* padding: 0 1.25rem; */
     /* padding: 3px 0; */
     /* text-align: ; */
-    padding-top: 5px;
+    /* padding-top: 20px; */
+    /* font-size: 3rem; */
+    padding: 10px 0;
+  
+    
+  }
+  .data .link{
+    height: 30px;
+    margin: 40px 0;
+    padding-top: 0px;
   }
    .label{
     padding-left: 0.4rem;
     font-size: 1rem;
 
   }
-.link:hover{
-    /* color: var(--primary); */
+.data .link:hover, .dash .link:hover{
+    color: var(--white);
     background-color:var(--textcolor);
     border-left: 4px solid var(--primary);
     transition: none;
     padding-left: 0;
+}
+.link:hover{
+  /* color: var(--white); */
 }
 .active{
     color: var(--primary);
@@ -79,13 +109,13 @@ align-self: center;
 }
 .icon{
     /* height: 1rem; */
-    padding-left: 40px;
+    padding-left: 80px;
     /* width: 100%; */
 }
 
 .sidebarnav{
 background-color:var(--sidebar);
-height:calc(100% - 60px);
+/* height:calc(100% - 60px); */
 width:250px;
 display:flex;
 justify-content:center;

@@ -20,7 +20,7 @@ import Telephone from '../../assets/icons/telephone.png'
 import Invoice from '../../assets/icons/invoice.png'
 import {Miscellaneous, Consultations } from '../../../utils.jsx'
 
-export const SidebarData =[
+export const SidebarDash =[
     {
         title:'Dashboard',
         path:'/',
@@ -52,7 +52,10 @@ export const SidebarData =[
         title:'Forecast',
         path:'/forecast',
         icon:<BsIcons.BsDisplay size={18}/>
-    },
+    }
+    
+]
+export const SidebarData=[
     {
         title:'Posts',
         path:'/posts',
