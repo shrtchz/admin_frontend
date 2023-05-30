@@ -17,7 +17,7 @@ function Clock() {
     hour12: false,
   });
 
-  return <div className="clock">{formatter.format(time)}</div>;
+  return <div className=" col-3 px-1">{formatter.format(time)}</div>;
 }
 
 export default Clock;

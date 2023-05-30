@@ -4,5 +4,7 @@
     "files.autoSave": "afterDelay",
     "files.saveConflictResolution": "overwriteFileOnDisk",
     "files.autoSaveDelay": 10,
-    "editor.foldingImportsByDefault": true
+    "editor.foldingImportsByDefault": true,
+    "typescript.experimental.tsserver.web.enableProjectWideIntellisense": true,
+    "terminal.integrated.shellIntegration.suggestEnabled": true
 }

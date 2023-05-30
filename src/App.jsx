@@ -1,10 +1,11 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-// import './App.css'
+import './App.css'
 import Login from "./pages/Login";
 import Subadmin from "./pages/Subadmin";
 import Home from "./components/contents/Home";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Dashboard from "./components/Dashboard";
 // import {
@@ -41,16 +42,18 @@ function App() {
     //   }
     //   </Routes>
     // </Router>
-    <>
-    {
+    <div className="App ">
+    {/* <Dashboard/> */}
+    {/* {
       isLoggedIn ? (
         <>
-        <Dashboard /> 
-       {/* <ProtectedRoute/>  */}
+        <Dashboard  onLogout={setIsLoggedIn}/> 
+       
         </>
       ): <Login  onLogin={setIsLoggedIn}/>
-    }
-    </>
+    } */}
+    <Dashboard/>
+    </div>
    
   );
 }

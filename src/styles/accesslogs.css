@@ -1,12 +1,27 @@
 *{
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     padding: 0;
     margin: 0;
+}
+header{
+  height: 50px;
+  background-color: #4d4d4d;
+
+}
+.tbl-container{
+    height:100%;
+    width: 100%;
+}
+.table-wrapper{
+    overflow-y: scroll;
+    height: fit-content;
+    max-height: 80vh;
 }
 .checkbox-table {
     border-collapse:collapse;
     width: 100%;
-    /* margin:0; */
+    margin:0;
+    
   }
   
   .checkbox-table th,
@@ -15,11 +30,12 @@
     text-align: left;
     border: none;
   }
-  .checkbox-table td{
-    /* color: ; */
-    height: 20px;
-    font-size: 14px;
+  .checkbox-table tr{
+    padding: 0 !important;
+    margin: 0 !important;
   }
+
+ 
   .checkbox-table th {
     background-color:#E3E2D6;
     color: #887332;
@@ -39,4 +55,16 @@
   .checkbox-table input[type="checkbox"] {
     margin-right: 10px;
   }
-  
+  .check{
+    background-color:#5B84FF !important;
+  }
+  .btnadd{
+    border: 2px solid #5B84FF !important;
+    background-color: #4d4d4d !important;
+    width: 70px;
+    padding: 2px 5px;
+    color: #5B84FF !important;
+    /* background: #4D4D4D; */
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05), 0px 2px 1px rgba(0, 0, 0, 0.25);
+
+  }

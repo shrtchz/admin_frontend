@@ -20,7 +20,7 @@ import Telephone from '../../assets/icons/telephone.png'
 import Invoice from '../../assets/icons/invoice.png'
 import {Miscellaneous, Consultations } from '../../../utils.jsx'
 
-export const SidebarData =[
+export const SidebarDash =[
     {
         title:'Dashboard',
         path:'/',
@@ -52,19 +52,58 @@ export const SidebarData =[
         title:'Forecast',
         path:'/forecast',
         icon:<BsIcons.BsDisplay size={18}/>
-    },
+    }
+    
+]
+export const SidebarData=[
     {
-        title:'Posts',
+        title:'POSTS',
         path:'/posts',
         icon:<TbIcons.TbMailbox size={18}/>
     },
     {
-        title:'Settings',
-        path:'/settings',
-        icon:<FaIcons.FaTools size={18}/>
+        title:'SETTINGS',
+        path:'#',
+        icon:<FaIcons.FaTools size={18}/>,
+        subMenu:[
+            {
+                title:'Categories',
+                path:'/settings/categories',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'Subcategories',
+                path:'/settings/subcategories',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'Markets',
+                path:'/settings/markets',
+                icon:<FaIcons.FaUsers/>
+            }, {
+                title:'Tips',
+                path:'/settings/tips',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'Currencies',
+                path:'/settings/currencies',
+                icon:<FaIcons.FaUsers/>
+            }, {
+                title:'Fees and Taxes',
+                path:'/settings/fees&taxes',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'Picks',
+                path:'/settings/picks',
+                icon:<FaIcons.FaUsers/>
+            },
+
+        ]
     },
     {
-        title:'Consultations',
+        title:'CONSULTATION',
         path:'/consultations',
         icon:<Consultations size={18}/>
         // icon:<BiIcons.BiBell/>
@@ -72,56 +111,102 @@ export const SidebarData =[
         // icon:<img src={Telephone} alt='telephone'/>
     },
     {
-        title:'Fundraisers',
+        title:'FUNDRAISERS',
         path:'/fundraisers',
         icon:<BiIcons.BiMoneyWithdraw size={18}/>
     },
     {
-        title:'Advertising',
+        title:'ADVERTISING',
         path:'/advertising',
         icon:<GiIcons.GiMegaphone size={18}/>
     },
     {
-        title:'Users',
-        path:'/users',
+        title:'USERS',
+        path:'#',
         icon:<HiIcons.HiOutlineUserGroup size={18}/>,
         subMenu:[
             {
                 title:'General',
-                path:'/general',
+                path:'/users/allusers',
                 icon:<FaIcons.FaUsers/>
             },
             {
                 title:'Administration',
-                path:'/admin',
+                path:'/users/alladmins',
                 icon:<FaIcons.FaUsers/>
             },
 
         ]
     },
     {
-        title:'Subscription',
+        title:'SUBSCRIPTION',
         path:'/subscription',
         icon:<FaIcons.FaRss size={18}/>
     },
        {
-        title:'Invoices',
+        title:'INVOICES',
         path:'/invoices',
         icon:<FaIcons.FaFileInvoiceDollar size={18}/>
         // icon:'../../assets/invoice.ico'
         // icon:<img src={Invoice} alt='invoice'/>
     },
     {
-        title:'Payments',
+        title:'PAYMENTS',
         path:'/payments',
         icon:<CiIcons.CiWallet size={18}/>
     },
     {
-        title:'Miscellaneous',
-        path:'/miscellaneous',
+        title:'MISCELLANEOUS',
+        path:'#',
         // icon:<Miscellaneous/>
         // icon:<BiBell/>
-        icon:<Miscellaneous/>
+        icon:<Miscellaneous/>,
+        subMenu:[
+            {
+                title:'App Manager',
+                path:'/miscellaneous/appmanager',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'Privacy Policy',
+                path:'/miscellaneous/privacy&policy',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'Terms of Service',
+                path:'/miscellaneous/termsofservice',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'FAQs',
+                path:'/miscellaneous/faqs',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'Social Media',
+                path:'/miscellaneous/socialmedia',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'Blogs',
+                path:'/miscellaneous/blogs',
+                icon:<FaIcons.FaUsers/>
+            }, {
+                title:'News',
+                path:'/miscellaneous/news',
+                icon:<FaIcons.FaUsers/>
+            },
+            {
+                title:'Promotins',
+                path:'/miscellaneous/promotions',
+                icon:<FaIcons.FaUsers/>
+            }, {
+                title:'Email portals',
+                path:'/miscellaneous/emailportals',
+                icon:<FaIcons.FaUsers/>
+            },
+
+        ]
         // icon:<img src={Miscellaneous} alt='miscellaneous'/>
     },
 ]
