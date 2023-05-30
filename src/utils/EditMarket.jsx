@@ -32,7 +32,7 @@ const EditMarket = ({isOpen, isClose,markId,data,updateTable}) => {
         }
       };
   useEffect(() => {
-    if (isOpen && id) {
+    if (isOpen && markId) {
       // Fetch data from the database based on catId
      
 
@@ -40,14 +40,14 @@ const EditMarket = ({isOpen, isClose,markId,data,updateTable}) => {
     }else {
         setName('');
       }
-  }, [isOpen, id])
+  }, [isOpen, markId])
     const handleSave = async (event) => {
         event.preventDefault()
         try {
           const authToken = localStorage.getItem('token');
 
           // Send the updated name to the endpoint
-          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-market/${markId}`, { name, category_name: selectedValue || ''}, {headers: {
+          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-markets/${markId}`, { name}, {headers: {
             Authorization: `Bearer ${authToken}`
           }
         });
