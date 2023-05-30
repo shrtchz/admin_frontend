@@ -5,27 +5,31 @@ import UploadImage from './UploadImage';
 import axios from 'axios';
 
 
-const EditMarket = ({isOpen, isClose,markId,data,updateTable}) => {
-    
+const EditCurr = ({isOpen, isClose,id,data,updateTable}) => {
+    // console.log('dt', data)
     const [name, setName] = useState('');
+    const [acronym, setAcronym] = useState('');
     const [selectedValue, setSelectedValue] = useState('');
     const fetchData = async () => {
         try {
           const authToken = localStorage.getItem('token');
             
-          const response = await axios.get(`https://shrtchz.pw/api/admin-profile/all-markets`, {
+          const response = await axios.get(`https://shrtchz.pw/api/admin-profile/all-currencies`, {
             headers: {
               Authorization: `Bearer ${authToken}`
             }
           });
           const data = response.data.data;
-          console.log(data)
+          console.log('data',data)
         //   const data = response.data.data;
            
-          const market = data.find((item) => item.mar_id === markId);
-          if (market) {
-            console.log(market);
-            setName(market.name);
+          const curr = data.find((item) => item.cur_id === id);
+          if (curr) {
+            console.log(curr);
+            setName(curr.name);
+            setAcronym(curr.acronym);
+
+            // setMarId(tip.mark_id)
           }
         } catch (error) {
           console.error(error);
@@ -43,11 +47,15 @@ const EditMarket = ({isOpen, isClose,markId,data,updateTable}) => {
   }, [isOpen, id])
     const handleSave = async (event) => {
         event.preventDefault()
+    
+        // console.log('dt',...data.market)
+        
+       
         try {
           const authToken = localStorage.getItem('token');
-
+        
           // Send the updated name to the endpoint
-          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-market/${markId}`, { name, category_name: selectedValue || ''}, {headers: {
+          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-currency/${id}`, {name}, {headers: {
             Authorization: `Bearer ${authToken}`
           }
         });
@@ -72,30 +80,24 @@ const EditMarket = ({isOpen, isClose,markId,data,updateTable}) => {
         <div className='cont'>
             <div className='title row align-items-center pt-2 px-4'>
                 <div className='d-flex justify-content-between'>
-                <h5>Edit Market</h5>
+                <h5>Edit Currency</h5>
                         <IoIcons.IoMdClose onClick={isClose}/>
                 </div>
             </div>
             <div className='body mt-5 mx-4'>
                 <form onSubmit={handleSave}>
                     <div>
-                        <label> Market</label>
+                        <label> Currency</label>
                         <input type='text' id="categoryName"
                 value={name}
                 onChange={(event) => setName(event.target.value)}/>
                     </div>
-                    {/* <div className='my-3 d-flex image-container align-items-center'>
-                        <UploadImage/>
-                    </div> */}
+                
                     <div>
-              <label> Category</label>
-              <select value={selectedValue} onChange={handleSelectChange}>
-                {data.map(item => (
-                  <option key={item.id} value={item.category?.name || ''}>
-                    {item.category?.name || 'N/A'}
-                  </option>
-                ))}
-              </select>
+                        <label> Acronym</label>
+                        <input type='text' id="acronymName"
+                            value={acronym}
+                            onChange={(event) => setName(event.target.value)}/>
             </div>
                     <div className='d-flex justify-content-end m-4 '>
                     <div className='d-flex justify-content-between bn'>
@@ -111,4 +113,4 @@ const EditMarket = ({isOpen, isClose,markId,data,updateTable}) => {
   )
 }
 
-export default EditMarket
+export default EditCurr

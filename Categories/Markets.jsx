@@ -53,9 +53,9 @@ const handleDelete = async () => {
 
     
     const deletePromises = selectedRows.map((selectedIndex) => {
-      const item = catData[selectedIndex];
-      console.log(item.subcat_id)
-      return axios.delete(`${deleteUrl}/${item.subcat_id}`, { headers });
+      const item = ata[selectedIndex];
+      console.log(item.mar_id)
+      return axios.delete(`${deleteUrl}/${item.mar_id}`, { headers });
       // console.log(deleted)
 
     });
@@ -63,10 +63,10 @@ const handleDelete = async () => {
     // Wait for all delete promises to resolve
     await Promise.all(deletePromises);
 
-  const updatedCatData = catData.filter((item, index) => !selectedRows.includes(index));
+  const updatedData = data.filter((item, index) => !selectedRows.includes(index));
 
   // Update the table data with the updatedCatData
-  setCatData(updatedCatData);
+  setData(updatedData);
 
   // Clear the selected rows for deletion
   setSelectedRows([]);

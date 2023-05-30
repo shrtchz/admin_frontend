@@ -42,12 +42,14 @@ const Navbar = ({ isOpen, showSidebar, onLogout }) => {
           </div>
           <div className="col-7 d-flex  col-lg-4 col-xl-5 align-items-center  align-items-center">
             <div className="d-flex flex-row w-100 justify-content-center align-items-center px-4">
+              <span>
               <div className="mt-1">
                 <label className="switch">
                   <input type="checkbox" />
                   <span className="slider round"></span>
                 </label>
               </div>
+              </span>
 
               <Clock />
               <UserInfo onLogout={onLogout} />

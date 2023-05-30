@@ -4,16 +4,19 @@ import * as BsIcon from 'react-icons/bs'
 import * as BiIcon from 'react-icons/bi'
 import * as AiIcon from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-import Table from '../src/utils/Table'
 import { categoryHeaders } from '../src/utils/Headers'
 import axios from 'axios'
+import TableCurr from '../src/utils/TableCurr'
+import AddMarket from '../src/utils/AddMarket'
 
-const url= 'https://shrtchz.pw/api/admin-profile/all-categories'
-const url2='https://dummyjson.com/users?limit=10'
+const url= 'https://shrtchz.pw/api/admin-profile/all-currencies'
+const deleteUrl='https://shrtchz.pw/api/admin-profile/delete-subcategories'
+const endpoint="https://shrtchz.pw/api/admin-profile/create-subcategories"
+const authToken=localStorage.getItem('token')
 
-const Currencies = () => {
-  const [catData, setCatData]=useState([])
-
+const Currencies= () => {
+  const [data, setData]=useState([])
+  const [isModalOpen, setIsModalOpen]=useState(false)
   const [selectedRows, setSelectedRows] = useState([]);
   const fetchData = async () => {
     try {
@@ -21,62 +24,60 @@ const Currencies = () => {
   let res=await axios.get(`${url}`,{headers: {
     Authorization: `Bearer ${authToken}`}
   })
-  let res2=await axios.get(`${url2}`,{headers: {
-    Authorization: `Bearer ${authToken}`}
-  })
-
-  // console.log(res.data.data)
- 
-  // console.log(res2)
-  setCatData(res.data.data)
+  console.log(res.data.data)
+  setData(res.data.data)
     } catch (error) {
-      console.log('Error fetching data:', error.response);
+      console.log('Error fetching data:', error);
     }
   };
   useEffect(() => {
 
     fetchData();
   },[]);
-  // const [selectedRows, setSelectedRows] = useState([]);
+  
+  const handleOpen=()=>{
+    console.log('Add category')
+    setIsModalOpen(true)
 
-  const handleCheckboxChange = (event, index) => {
-    if (event.target.checked) {
-      setSelectedRows([...selectedRows, index]);
-    } else {
-      setSelectedRows(selectedRows.filter((rowIndex) => rowIndex !== index));
-    }
-  };
+   }
+const handleClose= ()=>{
+  console.log('Closed')
+  setIsModalOpen(false)
+}
+const handleDelete = async () => {
+  try {
+    const authToken = localStorage.getItem('token');
+    const headers = {
+      Authorization: `Bearer ${authToken}`,
+    };
 
-  // const handleCheckboxChange = (itemId) => {
-  //   const itemIndex = selectedRows.indexOf(itemId);
-  //   if (itemIndex === -1) {
-  //     console.log(itemId)
-  //     setSelectedRows([...selectedRows, itemId]);
-  //   } else {
-  //     setSelectedRows(selectedRows.filter((id) => id !== itemId));
-  //   }
-  // };
+    
+    const deletePromises = selectedRows.map((selectedIndex) => {
+      const item = data[selectedIndex];
+      console.log(item.subcat_id)
+      return axios.delete(`${deleteUrl}/${item.subcat_id}`, { headers });
+      // console.log(deleted)
 
-  const handleSelectAllChange = (event) => {
-    if (event.target.checked) {
-      setSelectedRows(users.map((item) => item.id));
-    } else {
-      setSelectedRows([]);
-    }
-  };
+    });
 
-  const isChecked = (itemId) => {
-    return selectedRows.indexOf(itemId) !== -1;
-  };
+    // Wait for all delete promises to resolve
+    await Promise.all(deletePromises);
 
-  const isAllChecked = () => {
-    return users.length > 0 && selectedRows.length === users.length;
-  };
-  const handleDeleteRow = (index) => {
-    console.log('delete')
-    setCatData(catData.filter((_, rowIndex) => rowIndex !== index));
-    setSelectedRows(selectedRows.filter((rowIndex) => rowIndex !== index));
+  const updatedData = data.filter((item, index) => !selectedRows.includes(index));
+
+  // Update the table data with the updateddata
+  setData(updatedData);
+
+  // Clear the selected rows for deletion
+  setSelectedRows([]);
+
+  // Uncheck the next item after deleting the current one
+  const nextSelectedIndex = Math.min(...selectedRows);
+  setSelectedRows([nextSelectedIndex]);
+  } catch (error) {
+    console.log(error);
   }
+};
   return (
     <>
         <div className='d-flex flex-column w-100'>
@@ -85,7 +86,7 @@ const Currencies = () => {
             <div className='col-7'>
             <div className='d-flex justify-content-between allsicons'>
             <div>
-              <BsIcon.BsTrash3 className='sicon' size={20} onClick={handleDeleteRow}/>
+              <BsIcon.BsTrash3 className='sicon' size={20} onClick={handleDelete}/>
 
             </div>
             <div className=''>
@@ -100,7 +101,7 @@ const Currencies = () => {
             </div>
             <div className='col-3 d-flex g-0 '>
             <div className='d-flex w-100 justify-content-between allsicons'>
-            <div className=' col-1'></div>
+            <div className='col-1'></div>
             <div className=' col-4 pt-2'>
               <p className='text pt-1 px-2'>1-20 of 100</p>
 
@@ -111,8 +112,8 @@ const Currencies = () => {
 
 
             </div>
-            <div className=' col-4 d-flex align-items-center justify-content-center  '>
-                  <div className='d-flex justify-content-center align-items-center add p-2'>
+            <div className='col-4 d-flex align-items-center justify-content-center  '>
+                  <div className='d-flex justify-content-center align-items-center add p-2' onClick={handleOpen}>
                   <AiIcon.AiOutlinePlus className='sicon col'style={{color:'#5B84FF'}} size={20}/>
                   <span>Add</span>
                   </div>
@@ -120,12 +121,14 @@ const Currencies = () => {
             </div>
             </div>
             </div>
-            <div className='col-1 d-flex  '>
+            <div className='col-1 d-flex '>
             <div></div>
             </div>
           </div>
         </header>
-          <Table data={catData} headers={categoryHeaders} selectedRows={selectedRows}  fetchData={fetchData} setData={setCatData}/>
+          <TableCurr data={data} headers={categoryHeaders} selectedRows={selectedRows}  fetchData={fetchData} setData={setData}/>
+          <AddMarket isOpen={isModalOpen} data={data} isClose={handleClose} endpoint={endpoint} authToken={authToken}
+          />
         </div>
     </>
   )
