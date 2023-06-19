@@ -1,0 +1,32 @@
+:root{
+    --icons:#F8F8F8;
+    --addi:#5B84FF;
+    --addb:#5B84FF;
+    
+}
+
+.pred_header{
+    height:50px;
+    background-color: var(--bg);
+}
+.font{
+    font-size: 12px;
+    color:white
+}
+.icon_color{
+    color:var(--icons)
+}
+.hidden-row {
+    display: none;
+  }
+  
+.icon_addb{
+    color:var(--addb);
+}
+.icon_addb{
+    border:1px solid var(--addb);
+    padding: 4px;
+    font:12px;
+    border-radius: 5px;
+
+}

@@ -19,14 +19,14 @@ const AddMarket = ({ data, isOpen, isClose, endpoint, authToken }) => {
     event.preventDefault();
     try {
       isClose();
-    //   const photoUrlWithPath = photoUrl ? `/storage/category_photos/${photoUrl}` : '';
       const response = await axios.post(
         endpoint,
         { name},
         { headers: { Authorization: `Bearer ${authToken}` } }
       );
-      const data = response.data.data;
-      console.log(data);
+      // const data = response.data.data;
+      // console.log(data);
+      data()
     } catch (error) {
       console.log(error);
     }
@@ -61,8 +61,8 @@ const AddMarket = ({ data, isOpen, isClose, endpoint, authToken }) => {
             <div>
               <label> Category</label>
               <select value={selectedValue} onChange={handleSelectChange}>
-                {data.map(item => (
-                  <option className='opt' key={item.id} value={item.category?.name || ''}>
+                {data.map((item,index) => (
+                  <option className='opt' key={item.index} value={item.category?.name || ''}>
                     {item.category?.name || 'N/A'}
                   </option>
                 ))}

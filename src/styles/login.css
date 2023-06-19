@@ -40,7 +40,7 @@
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
-  button[type=submit] {
+  .login-container button[type=submit] {
     /* background-color: #4CAF50; */
     background-color: #FFD558;
     color: #000;

@@ -179,11 +179,9 @@ const Table = ({
             </tbody>
           </table>
         </div>
-        {/* <EdtModal isModalOpen={isModalOpen} style={{display:"none"}} /> */}
+
       </div>
-      {/* <div className='position-absolute' >
-                        hhdhdhd
-    </div> */}
+     
       <EdtModal
         isOpen={isModalOpen}
         isClose={handleCloseModal}

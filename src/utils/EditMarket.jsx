@@ -8,6 +8,8 @@ import axios from 'axios';
 const EditMarket = ({isOpen, isClose,markId,data,updateTable}) => {
     
     const [name, setName] = useState('');
+    const [cat_id, setCatsId] = useState('');
+
     const [selectedValue, setSelectedValue] = useState('');
     const fetchData = async () => {
         try {
@@ -25,7 +27,9 @@ const EditMarket = ({isOpen, isClose,markId,data,updateTable}) => {
           const market = data.find((item) => item.mar_id === markId);
           if (market) {
             console.log(market);
+            console.log(market.cats_id);
             setName(market.name);
+            setCatsId(market.cats_id)
           }
         } catch (error) {
           console.error(error);
@@ -45,9 +49,10 @@ const EditMarket = ({isOpen, isClose,markId,data,updateTable}) => {
         event.preventDefault()
         try {
           const authToken = localStorage.getItem('token');
-
+          let id= Number(cat_id)
+          // console.log(typeof(id))
           // Send the updated name to the endpoint
-          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-markets/${markId}`, { name}, {headers: {
+          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-market/${markId}`, { name,cats_id:id}, {headers: {
             Authorization: `Bearer ${authToken}`
           }
         });

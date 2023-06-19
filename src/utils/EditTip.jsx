@@ -101,8 +101,8 @@ const EditTip = ({isOpen, isClose,id,data,updateTable}) => {
               <label> Select Market</label>
               <select value={selectedValue} onChange={handleSelectChange}>
                 {data.map(item => (
-                  <option key={item.id} value={item.market?.name || ''}>
-                    {item.market?.name || 'N/A'}
+                  <option key={item.id} value={item.tips?.name || ''}>
+                    {item.tips?.name || 'N/A'}
                   </option>
                 ))}
               </select>

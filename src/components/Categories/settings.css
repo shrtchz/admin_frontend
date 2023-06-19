@@ -1,0 +1,46 @@
+:root{
+    --bckg: #4D4D4D;
+}
+header{
+    background-color: var(--bckg);
+    height:50px;
+    /* width: 100%; */
+}
+.sicon{
+    color: #fff;
+    
+}
+
+.allsicons{
+    width:120px
+}
+.text{
+    font-size: 14px;
+    color: #fff;
+    font-size: 12px;
+}
+.arr{
+    font-size: 18px;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+}
+.add{
+    font-size: 14px;
+    color:#5B84FF;
+    border: 1.4px solid #5B84FF;
+    height: 30px;
+}
+.submit_btn{
+    background-color: #fff !important;
+    /* width: 200px !important; */
+    font-size: 18px;
+    border: 1px solid #282828 !important;
+    border-radius: 8px;
+ 
+
+}
+.submit_btn:hover{
+
+}

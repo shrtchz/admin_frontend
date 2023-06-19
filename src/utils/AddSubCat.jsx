@@ -21,14 +21,14 @@ const AddSubCat = ({ data, isOpen, isClose, endpoint, authToken }) => {
     event.preventDefault();
     try {
       isClose();
-      const photoUrlWithPath = photoUrl ? `/storage/category_photos/${photoUrl}` : '';
+      const photoUrlWithPath = photoUrl ? `'https://shrtchz.pw/storage/category_photos/${photoUrl}` : '';
       const response = await axios.post(
         endpoint,
-        { name, photo_url: photoUrlWithPath || '' },
+        { name, photo_url: photoUrlWithPath  },
         { headers: { Authorization: `Bearer ${authToken}` } }
       );
       const data = response.data.data;
-      console.log(data);
+      console.log(data.category);
     } catch (error) {
       console.log(error);
     }

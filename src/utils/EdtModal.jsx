@@ -6,16 +6,10 @@ import axios from 'axios';
 
 
 const EdtModal = ({isOpen, isClose,catId,updateTable}) => {
-    
-    //   const handleSave =()=>{
-    //     isClose()
-    //     console.log('Save')
-    //   }
     const [name, setName] = useState('');
     const fetchData = async () => {
         try {
-          const authToken = localStorage.getItem('token');
-            
+          const authToken = localStorage.getItem('token');  
           const response = await axios.get(`https://shrtchz.pw/api/admin-profile/all-categories`, {
             headers: {
               Authorization: `Bearer ${authToken}`
@@ -43,6 +37,7 @@ const EdtModal = ({isOpen, isClose,catId,updateTable}) => {
         setName('');
       }
   }, [isOpen, catId])
+  
     const handleSave = async (event) => {
         event.preventDefault()
         try {
@@ -66,6 +61,10 @@ const EdtModal = ({isOpen, isClose,catId,updateTable}) => {
       if (!isOpen) {
         return null;
       }
+      const handleUpload = (file) => {
+        console.log(file)
+        setPhotoUrl(file);
+      };
   return (
     <div className='modal-content position-absolute top-0 align-items-center' >
         <div className='cont'>
@@ -84,7 +83,7 @@ const EdtModal = ({isOpen, isClose,catId,updateTable}) => {
                 onChange={(event) => setName(event.target.value)}/>
                     </div>
                     <div className='my-3 d-flex image-container align-items-center'>
-                        <UploadImage/>
+                        <UploadImage handleUpload={handleUpload} />
                     </div>
                     <div className='d-flex justify-content-end m-4 '>
                     <div className='d-flex justify-content-between bn'>

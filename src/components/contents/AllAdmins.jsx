@@ -130,9 +130,7 @@ const Admin = ({sidebar}) => {
               handleModalCheck={handleModalCheck}
               />
             </div>
-            {/* <div className=''>
-            <AiIcon.AiOutlineStop className='sicon' size={25}/>
-            </div> */}
+          
             </div>
           
             </div>

@@ -1,3 +1,6 @@
+:root{
+--bg: #4D4D4D;
+}
 *{
   overflow: hidden;
 }

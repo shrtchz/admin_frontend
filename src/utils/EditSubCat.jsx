@@ -6,12 +6,14 @@ import axios from 'axios';
 
 
 const EdidSubCat = ({isOpen, isClose,subcatId,updateTable}) => {
-    
+    console.log(subcatId)
     //   const handleSave =()=>{
     //     isClose()
     //     console.log('Save')
     //   }
     const [name, setName] = useState('');
+    const [catsId, setCatsId] = useState('');
+
     const fetchData = async () => {
         try {
           const authToken = localStorage.getItem('token');
@@ -27,8 +29,10 @@ const EdidSubCat = ({isOpen, isClose,subcatId,updateTable}) => {
            
           const subcategory = data.find((item) => item.subcat_id === subcatId);
           if (subcategory) {
-            console.log(subcategory);
+            console.log(subcategory.cats_id);
             setName(subcategory.name);
+            setCatsId(subcategory.cats_id);
+
           }
         } catch (error) {
           console.error(error);
@@ -42,6 +46,7 @@ const EdidSubCat = ({isOpen, isClose,subcatId,updateTable}) => {
       fetchData();
     }else {
         setName('');
+       
       }
   }, [isOpen, subcatId])
     const handleSave = async (event) => {
@@ -50,7 +55,7 @@ const EdidSubCat = ({isOpen, isClose,subcatId,updateTable}) => {
           const authToken = localStorage.getItem('token');
 
           // Send the updated name to the endpoint
-          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-subcategories/${subcatId}`, { name}, {headers: {
+          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-subcategories/${subcatId}`, { name,cats_id:catsId}, {headers: {
             Authorization: `Bearer ${authToken}`
           }
         });

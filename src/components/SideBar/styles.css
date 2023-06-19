@@ -1,0 +1,12 @@
+
+img{
+    fill:#fff
+}
+.sidebar img {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+    height: 20px;
+  }
+  .pred{
+    height: 50px;
+  }

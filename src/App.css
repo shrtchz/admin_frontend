@@ -9,3 +9,6 @@
 .container{
   display: flex;
 }
+.App{
+  height: 100vh;
+}

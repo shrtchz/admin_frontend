@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import * as FiIcons from 'react-icons/fi'
 
-const UploadImage = ({ onImageUpload ,setSelectedImage ,handleUpload}) => {
-  
-  
+const UploadImage = ({ handleUpload }) => {
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
-    const reader = new FileReader();
-  
-    reader.onload = (event) => {
-      const imageUrl = event.target.result;
-      handleUpload(imageUrl);
-    };
-  
+    console.log(file.name)
     if (file) {
-      reader.readAsDataURL(file);
+      handleUpload(file);
+    } else {
+      // Handle error for non-image files
+      console.error('The file must be an image.');
     }
   };
 
@@ -27,7 +22,7 @@ const UploadImage = ({ onImageUpload ,setSelectedImage ,handleUpload}) => {
       <label>
 
       Add Image
-      <input type="file" accept="image/*" onChange={handleFileUpload} /></label>
+      <input type="file" accept="file" onChange={handleFileUpload} /></label>
    
     </div>
   );

@@ -52,7 +52,7 @@ height: 50px;}
    
 }
 .upload input{
-    opacity: 0;
+    opacity: 1;
 }
 .bt{
     /* background-color: green !important; */

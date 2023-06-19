@@ -5,10 +5,11 @@ import UploadImage from './UploadImage';
 import axios from 'axios';
 
 
-const EditCurr = ({isOpen, isClose,id,data,updateTable}) => {
-    // console.log('dt', data)
+const EditCurr = ({isOpen, id,isClose}) => {
+   
     const [name, setName] = useState('');
     const [acronym, setAcronym] = useState('');
+
     const [selectedValue, setSelectedValue] = useState('');
     const fetchData = async () => {
         try {
@@ -20,23 +21,21 @@ const EditCurr = ({isOpen, isClose,id,data,updateTable}) => {
             }
           });
           const data = response.data.data;
-          console.log('data',data)
-        //   const data = response.data.data;
-           
-          const curr = data.find((item) => item.cur_id === id);
-          if (curr) {
-            console.log(curr);
-            setName(curr.name);
-            setAcronym(curr.acronym);
+          console.log("Edit data",data)
+          const currency = data.find((item) => item.cur_id === id);
+          if (currency) {
+    
+            setName(currency.name);
+            setAcronym(currency.acronym);
 
-            // setMarId(tip.mark_id)
           }
         } catch (error) {
           console.error(error);
         }
       };
   useEffect(() => {
-    if (isOpen && id) {
+    if (isOpen) {
+      console.log("edit opened")
       // Fetch data from the database based on catId
      
 
@@ -47,24 +46,19 @@ const EditCurr = ({isOpen, isClose,id,data,updateTable}) => {
   }, [isOpen, id])
     const handleSave = async (event) => {
         event.preventDefault()
-    
-        // console.log('dt',...data.market)
-        
        
         try {
           const authToken = localStorage.getItem('token');
         
           // Send the updated name to the endpoint
-          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-currency/${id}`, {name}, {headers: {
+          const response = await axios.put(`https://shrtchz.pw/api/admin-profile/update-currency/${id}`, {name,acronym}, {headers: {
             Authorization: `Bearer ${authToken}`
           }
         });
           const data = response.data.data;
-          // Handle the response
+        console.log(data)
           isClose();
-          updateTable();
-          // console.log(data);
-        //   setName('')
+      
         } catch (error) {
           console.error(error);
         }
@@ -88,16 +82,15 @@ const EditCurr = ({isOpen, isClose,id,data,updateTable}) => {
                 <form onSubmit={handleSave}>
                     <div>
                         <label> Currency</label>
-                        <input type='text' id="categoryName"
+                        <input type='text' id="currencyName"
                 value={name}
                 onChange={(event) => setName(event.target.value)}/>
                     </div>
-                
                     <div>
-                        <label> Acronym</label>
-                        <input type='text' id="acronymName"
-                            value={acronym}
-                            onChange={(event) => setName(event.target.value)}/>
+              <label> Acronym</label>
+              <input type='text' id="acronymName"
+                value={acronym}
+                onChange={(event) => setAcronym(event.target.value)}/>
             </div>
                     <div className='d-flex justify-content-end m-4 '>
                     <div className='d-flex justify-content-between bn'>

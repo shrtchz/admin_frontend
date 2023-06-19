@@ -1,0 +1,27 @@
+.style{
+    border: 1px solid #282828;
+    border-radius: 8px;
+    height: 50px;
+    max-width: 300px;
+    width:100%;
+    /* background-color: #FFF; */
+    
+}
+.icon_style{
+    height: 100%;
+    background-color: #FFF;
+    border-right: 1.5px solid #282828;
+    border-radius:8px ;
+    
+    
+}
+.style input{
+    height: 100%;
+    margin: 0;
+    border: none !important;
+    outline: none;
+    margin: 0 auto;
+    background-color: inherit;
+    color: black;
+    width: fit-content;
+}

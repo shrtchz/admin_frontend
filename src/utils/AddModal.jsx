@@ -12,28 +12,37 @@ const AddModal = ({ isOpen, isClose, endpoint, authToken }) => {
   const [name, setName] = useState('');
   const [photoUrl, setPhotoUrl] = useState('');
 
-  console.log(photoUrl);
+  // console.log("phot", photoUrl);
 
   const handleSave = async (event) => {
     event.preventDefault();
     try {
       isClose();
-      const photoUrlWithPath = photoUrl ? `/storage/category_photos/${photoUrl}` : '';
-      const response = await axios.post(
-        endpoint,
-        { name,photo_url:photoUrlWithPath || ''},
-        { headers: { Authorization: `Bearer ${authToken}` } }
-      );
+      const formData = new FormData();
+      formData.append('name', name);
+      if (photoUrl) {
+        formData.append('photo', photoUrl, photoUrl.name);
+      }
+      console.log(formData)
+      const response = await axios.post(endpoint, formData, {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      
+
       const data = response.data.data;
       console.log(data);
     } catch (error) {
       console.log(error.response.data);
     }
   };
-  const handleUpload = (imageUrl) => {
-    setPhotoUrl(imageUrl);
+  const handleUpload = (file) => {
+    console.log(file)
+    setPhotoUrl(file);
   };
-  
+ 
   return (
     <div className='modal-content position-absolute top-0 align-items-center'>
       <div className='cont'>

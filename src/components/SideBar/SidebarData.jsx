@@ -10,12 +10,15 @@ import * as MdIcons from 'react-icons/md'
 import * as HiIcons from 'react-icons/hi'
 import * as GiIcons from 'react-icons/gi'
 import * as TbIcons from 'react-icons/tb'
-// import * as Icons from '../../assets/icons'
-{/* <link rel="stylesheet" href="../" /> */}
+import Post from '../../assets/Icns/post icon.png'
+import Predict from '../../assets/Icns/prediction icon.png'
+import Trends from '../../assets/Icns/trending image.png'
+import Evnts from '../../assets/Icns/events icon.png'
+import Mrkplc from '../../assets/Icns/market place icon.png'
 
-// import * as MdIcons from 'react-icons/md'
-// import * as Icons from '../../assets/icons/'
-// import Miscellaneous from '../../assets/icons/miscellaneous.png'
+
+import './styles.css'
+
 import Telephone from '../../assets/icons/telephone.png'
 import Invoice from '../../assets/icons/invoice.png'
 import {Miscellaneous, Consultations } from '../../../utils.jsx'
@@ -58,12 +61,34 @@ export const SidebarDash =[
 export const SidebarData=[
     {
         title:'POSTS',
-        path:'/posts',
-        icon:<TbIcons.TbMailbox size={18}/>
+        path:'/posts/listingevents',
+        icon:<img src={Post} />,
+        subMenu:[
+            {
+                title:'Predictions',
+                path:'/posts/predictions',
+                icon:<img src={Predict} alt='predict'/>
+            },
+            {
+                title:'Events',
+                path:'/posts/events',
+                icon:<img src={Evnts} alt='evnts'/>
+            },
+            {
+                title:'Marketplace',
+                path:'/posts/marketplace',
+                icon:<img src={Mrkplc} alt='market' />
+            },
+             {
+                title:'Trending',
+                path:'/posts/trending',
+                icon:<img src={Trends} alt='trends'/>
+            },
+        ]
     },
     {
         title:'SETTINGS',
-        path:'#',
+        path:'/settings/categories',
         icon:<FaIcons.FaTools size={18}/>,
         subMenu:[
             {

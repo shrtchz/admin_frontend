@@ -3,14 +3,15 @@ import './editmodal.css';
 import * as IoIcons from 'react-icons/io';
 import axios from 'axios';
 
-const AddTips = ({ data, isOpen, isClose, endpoint, authToken }) => {
+const AddTips = ({ data,cat, isOpen, isClose, endpoint, authToken }) => {
   if (!isOpen) {
     return null;
   }
   const nest = data;
-  console.log(nest);
+  console.log("Cate",cat);
 
   const [name, setName] = useState('');
+  const [categoty, setCategory]=([])
   const [selectedValue, setSelectedValue] = useState('');
 
 //   console.log(photoUrl);
@@ -18,6 +19,7 @@ const AddTips = ({ data, isOpen, isClose, endpoint, authToken }) => {
   const handleSave = async (event) => {
     event.preventDefault();
     try {
+      
       isClose();
     //   const photoUrlWithPath = photoUrl ? `/storage/category_photos/${photoUrl}` : '';
       const response = await axios.post(
@@ -43,14 +45,14 @@ const AddTips = ({ data, isOpen, isClose, endpoint, authToken }) => {
       <div className='cont'>
         <div className='title row align-items-center pt-2 px-4'>
           <div className='d-flex justify-content-between'>
-            <h5> Add Market</h5>
+            <h5> Add Tips</h5>
             <IoIcons.IoMdClose onClick={isClose} />
           </div>
         </div>
         <div className='body mt-5 mx-4'>
           <form onSubmit={handleSave}>
             <div>
-              <label>Market</label>
+              <label>Add Tips</label>
               <input
                 type='text'
                 id='marketName'
@@ -61,9 +63,9 @@ const AddTips = ({ data, isOpen, isClose, endpoint, authToken }) => {
             <div>
               <label> Category</label>
               <select value={selectedValue} onChange={handleSelectChange}>
-                {data.map(item => (
-                  <option className='opt' key={item.id} value={item.category?.name || ''}>
-                    {item.category?.name || 'N/A'}
+                {cat.map(item => (
+                  <option className='opt' key={item.cat_id} value={item.name }>
+                    {item.name}
                   </option>
                 ))}
               </select>

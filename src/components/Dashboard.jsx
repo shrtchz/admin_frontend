@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../styles/dashboard.css";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer";
-// import SideBar from './SideBar/SideBar';
 import SideBar from "./SideBar/SideBar";
-import Headerbar from "./Headers";
-import ProtectedRoute from "../pages/ProtectedRoute";
 import { BrowserRouter as Router,Route, Routes, Outlet, Navigate} from "react-router-dom";
-import MainContent from "./MainContent";
 import Home from "./contents/Home";
 import Accesslogs from "./contents/Accesslogs";
 import Advertising from "./contents/Advertising";
@@ -18,6 +14,7 @@ import Invoices from './contents/Invoices'
 import Subscription from './contents/Subscription'
 import Users from './contents/Users'
 import Posts from './contents/Posts'
+import PostsIndex from './Posts/PostsIndex'
 import Forecast from './contents/Forecast'
 import Payments from './contents/Payments'
 import Media from './contents/Media'
@@ -26,16 +23,18 @@ import Fundraisers from './contents/Fundraisers'
 import Settings from './contents/Settings'
 import AllUsers from "./contents/AllUsers";
 import AllAdmins from "./contents/AllAdmins";
-import Categories from '../../Categories/Categories'
-import Subcategories from '../../Categories/Subcategories'
-import Currencies from '../../Categories/Currencies'
-import Markets from '../../Categories/Markets'
-import FeesTaxes from '../../Categories/FeesTaxes'
-import Picks from '../../Categories/Picks'
-import Tips from '../../Categories/Tips'
-import AddAdmin from "../../Categories/AddAdmin";
+import Categories from './Categories/Categories'
+import Subcategories from './Categories/Subcategories'
+import Currencies from './Categories/Currencies'
+import Markets from './Categories/Markets'
+import FeesTaxes from './Categories/FeesTaxes'
+import Picks from './Categories/Picks'
+import Tips from './Categories/Tips'
+import AddAdmin from "./Categories/AddAdmin";
 import EditAdmin from "./EditAdmin";
 import DeleteAdmin from "./DeleteAdmin";
+// import Post from "./Posts/PostsIndex";
+// import PostsIndex from "./Posts/PostsIndex";
 
 // const useAuth=()=>{
 //   const user=localStorage.getItem('user')
@@ -74,7 +73,7 @@ const Dashboard = ({onLogout}) => {
           <Route path="/messages" element={<Messages />} />
           <Route path="/miscellaneous" element={<Miscellaneous />} />
           <Route path="/payments" element={<Payments />} />
-          <Route path="/posts" element={<Posts />} />
+          <Route  path="posts/*" element={<PostsIndex />} />
           <Route path="settings" element={<Settings />}>
             <Route path="/settings/categories" element={<Categories/>}/>
             <Route path="/settings/subcategories" element={<Subcategories/>}/>

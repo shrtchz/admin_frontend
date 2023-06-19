@@ -24,7 +24,9 @@ const TableCurr = ({
   const [status, setStatus] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
-
+  useEffect(() => {
+    fetchData();
+  }, []);
   const handleCheckboxChange = (event, index) => {
     const checked = event.target.checked;
     let updatedCheckedRows = [...checkedRows];
@@ -62,7 +64,7 @@ const TableCurr = ({
     // handleDelete(selectedData);
   };
   const handleOpenModal = (id) => {
-    console.log("Opened");
+    // console.log("edit","Opened");
     setSelectedId(id);
     setIsModalOpen(true);
   };
@@ -73,10 +75,8 @@ const TableCurr = ({
   };
 
  
-  
-  const updateTable = () => {
-    fetchData();
-  };
+
+
 
   return (
     <>
@@ -114,7 +114,7 @@ const TableCurr = ({
 
                   <td>
                     <BsIcon.BsPencilSquare
-                      onClick={() => handleOpenModal(item.curr_id)}
+                      onClick={() => handleOpenModal(item.cur_id)}
                     />
                   </td>
                 </tr>
@@ -128,7 +128,7 @@ const TableCurr = ({
         isOpen={isModalOpen}
         isClose={handleCloseModal}
         id={selectedId}
-        updateTable={updateTable}
+        fetchData={fetchData}
         data={data}
       />
     </>

@@ -1,0 +1,130 @@
+.event_content{
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.5);
+    height:100vh;
+    /* margin-top: -50px; */
+}
+.content{
+    background-color: #fff;
+    margin-top: 100px;
+    height: 75%;
+    border-radius: 8px;
+    max-height: 600px;
+}
+.content .tile{
+    height: 50px;
+    background-color: #f5f5f5;
+    width: 100%;
+}
+.dta{
+    height: 100px;
+}
+.event_mark{
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.label_text{
+     border: 1px solid gray;
+     font-size: 13x;
+     padding: 0 5px;
+}
+.event_mark .bt{
+    background-color: inherit !important;
+    border: 1px solid gray !important;
+    font-size: 12px;
+    height: 25px;
+    border-radius: none !important;
+
+}
+.event_mark button{
+    background-color: none !important;
+}
+button span{
+    height: 10px;
+}
+
+
+
+
+.form_data{
+    width: 100%;
+}
+.form_data {
+    width: 550px !important;
+    ;
+    
+}
+.custome input{
+    height: 40px;
+}
+.custome input,.custome select{
+    width: 100%;
+    background-color:  #E3E2D6;
+    border-radius: 5px;
+    border: 1px solid #ADB5BD;
+
+}
+.custom_select:focus,input{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.date_time input{
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ADB5BD;
+}
+.datetime-input::-webkit-datetime-edit-hour-field,
+.datetime-input::-webkit-datetime-edit-minute-field,
+.datetime-input::-webkit-datetime-edit-ampm-field {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bts{
+    height: 50px;
+}
+ .submit_bt{
+    border: 1px solid #282828 !important;
+    background-color: #fff !important;
+    height: 30px !important;
+    border-radius: 2px !important;
+    color: #282828 !important;
+ 
+    
+}
+.ttrow{
+    height: 200px!important;
+    max-height: 400px;
+}
+.selected_r{
+    height: 500px !important;
+  }
+.selected_row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    height: 500px;
+    min-height: 100px;
+  }
+  .market label{
+    font-weight: 600;
+    /* font-size: 11px; */
+  }
+  .market button{
+    border: 1px solid gray !important;
+    background-color: inherit;
+    font-weight: 500;
+  }
+  .market span{
+    border:1px solid gray;
+    display: flex;
+    justify-content: center;
+  }
+.market .bttt{
+    border: none !important;
+}
+.market input{
+    height: 100px;
+}
