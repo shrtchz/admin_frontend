@@ -138,7 +138,7 @@ const FeesTaxes = () => {
         
         </form>
         <div className="mx-5 col-4">
-         <button type="submit" className="submit_btn">Cancel</button>
+         <button type="submit" className="submit_btn w-100 mt-2 ">Cancel</button>
          </div>
         </div>
       </div>
