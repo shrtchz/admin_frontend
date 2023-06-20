@@ -9,7 +9,7 @@ const url='https://shrtchz.pw/api/auth/login'
 const Login = ({onLogin,setIsLoggedIn}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(null);
 
 
@@ -21,9 +21,12 @@ const handleSubmit = async(e)=>{
     console.log(res.data.token)
     localStorage.setItem('token',res.data.token)
     onLogin(true)
+    setErrorMessage(res.data.message)
     
   } catch (error) {
-    console.log(error.response)
+    console.log(error.response.data)
+    setErrorMessage(error.response.data.message); // Update error message state
+    
     
   }
  

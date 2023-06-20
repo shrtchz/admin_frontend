@@ -32,7 +32,7 @@
     padding-top: 20px;
     font-size: 20px !important;
   }
-  input[type=text], input[type=password] {
+  .login-container input[type=text], input[type=password] {
     width: 100%;
     padding: 10px;
     margin: 8px 0;

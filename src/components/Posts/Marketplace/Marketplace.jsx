@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../Predictions/Header";
-import "./event.css";
+import "./marketplace.css";
 import authFetch from "../../../utils/baseUrl";
 import OpenMarketplace from "./OpenMarketplace";
 

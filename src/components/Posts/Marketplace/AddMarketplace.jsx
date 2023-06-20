@@ -114,7 +114,7 @@ const AddMarketPlace = ({ isOpen, isClose }) => {
     return null;
   }
   return (
-    <div className="live_content position-absolute top-0 start-0 d-flex justify-content-center">
+    <div className="market_content position-absolute top-0 start-0 d-flex justify-content-center">
       <div className="content col-5">
         <div className="tile d-flex justify-content-between align-items-center px-4">
           <span>Add Event</span>

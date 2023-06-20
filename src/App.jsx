@@ -19,31 +19,17 @@ import SideBar from "./components/SideBar/SideBar";
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route , Navigate} from "react-router-dom";
 import ProtectedRoute from "./pages/ProtectedRoute";
-// import ChatBox from './components/contents/ChatBox'
+
 function App() {
-  // const storage=localStorage.getItem('admin')
+  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
+ 
 
   let content = null;
   return (
-    // <Router>
-    //   <Routes>
-    // {
-    //   !storage ?  <Route path="/login" element={<Login/>}/>
-    //   :
-    //   <Route path="/" element={<Home/>}/>
-    // }
-    //   {/* <Route element={<Dashboard/>}/> */}
-    //   {
-
-    //   }
-    //   </Routes>
-    // </Router>
+   
     <div className="App ">
-    {/* <Dashboard/> */}
+  
     {
       isLoggedIn ? (
         <>
@@ -52,7 +38,7 @@ function App() {
         </>
       ): <Login  onLogin={setIsLoggedIn}/>
     }
-    <Dashboard/>
+    {/* <Dashboard/> */}
     </div>
    
   );

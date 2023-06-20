@@ -51,11 +51,7 @@ const Dashboard = ({onLogout}) => {
     console.log(isOpen);
     setIsOpen(!isOpen);
   };
-//   useEffect(()=>{
-//     const getToken =localStorage.getItem('token')
-// console.log(getToken)
 
-//   },[])
 
   return (
     <Router>

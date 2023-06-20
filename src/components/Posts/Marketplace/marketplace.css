@@ -1,10 +1,10 @@
-.event_content{
+.market_content{
     width: 100%;
     background-color:rgba(0, 0, 0, 0.5);
     height:100vh;
     /* margin-top: -50px; */
 }
-.content{
+.market_content .content{
     background-color: #fff;
     margin-top: 100px;
     height: 75%;
@@ -48,12 +48,9 @@ button span{
 
 .form_data{
     width: 100%;
-}
-.form_data {
-    width: 550px !important;
-    ;
     
 }
+
 .custome input{
     height: 40px;
 }

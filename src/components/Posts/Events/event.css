@@ -4,12 +4,12 @@
     height:100vh;
     /* margin-top: -50px; */
 }
-.content{
+.event_content .content{
     background-color: #fff;
     margin-top: 100px;
     height: 75%;
     border-radius: 8px;
-    max-height: 600px;
+    max-height: 450px;
 }
 .content .tile{
     height: 50px;
@@ -49,11 +49,7 @@ button span{
 .form_data{
     width: 100%;
 }
-.form_data {
-    width: 550px !important;
-    ;
-    
-}
+/*  */
 .custome input{
     height: 40px;
 }

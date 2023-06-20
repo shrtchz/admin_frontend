@@ -114,14 +114,14 @@ const AddEvent = ({ isOpen, isClose }) => {
     return null;
   }
   return (
-    <div className="live_content position-absolute top-0 start-0 d-flex justify-content-center">
+    <div className="event_content position-absolute top-0 start-0 d-flex justify-content-center">
       <div className="content col-5">
         <div className="tile d-flex justify-content-between align-items-center px-4">
           <span>Add Event</span>
           <IoIcons.IoMdClose onClick={isClose} />
         </div>
-        <div className="d-flex mt-2 mx-3 align-items-start justify-content-center h-100">
-          <form className="form_data" onSubmit={handleSubmit}>
+        <div className="d-flex mt-2 mx-3 align-items-start justify-content-center h-100 ">
+          <form className="form_data w-100 " onSubmit={handleSubmit}>
             <div className="d-flex flex-column custome">
               <div className="custom_select">
                 <select
