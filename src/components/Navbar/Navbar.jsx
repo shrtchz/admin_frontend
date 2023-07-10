@@ -2,6 +2,8 @@ import React, { Children, useState } from "react";
 import Logo from "../../assets/images/logo.png";
 import Shrtchz from "../../assets/images/shrtchz.png";
 import AdminLogo from "../../assets/images/adminlogo.jpeg";
+import MainLogo from "../../assets/images/mainlogo.png";
+import Shrtz from '../../assets/images/shrtchz.png'
 import { FaSearch } from "react-icons/fa";
 import Clock from "./Clock";
 import UserInfo from "./UserInfo";
@@ -26,12 +28,25 @@ const Navbar = ({ isOpen, showSidebar, onLogout }) => {
             </Link>
 
             <Link className="logo" href="#">
-              <img
-                src={AdminLogo}
+            <img
+                src={Shrtchz}
                 className=""
                 style={{ width: "100%" }}
                 alt="shrtchz"
               />
+              {/* <img
+                src={MainLogo}
+                className=""
+                style={{ width: "100%" ,background:"white"}}
+                alt="shrtchz"
+              /> */}
+           
+               {/* <img
+                src={MainLogo}
+                className=""
+                style={{ width: "100%" ,}}
+                alt="mainlogo"
+              /> */}
             </Link>
           </div>
           <div className="col-lg-5  d-none d-lg-flex align-items-center bd-warning">
@@ -40,7 +55,7 @@ const Navbar = ({ isOpen, showSidebar, onLogout }) => {
               <input type="text" className="" placeholder="Search" />
             </div>
           </div>
-          <div className="col-7 d-flex  col-lg-4 col-xl-5 align-items-center  align-items-center">
+          <div className="col-7 d-flex  col-lg-4 col-xl-5 align-items-center ">
             <div className="d-flex flex-row w-100 justify-content-center align-items-center px-4">
               <span>
               <div className="mt-1">

@@ -12,3 +12,12 @@
 .App{
   height: 100vh;
 }
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+html{
+font-family: 'Montserrat';
+}

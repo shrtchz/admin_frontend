@@ -43,7 +43,7 @@ const AddSubCat = ({ data, isOpen, isClose, endpoint, authToken }) => {
   };
 
   return (
-    <div className='modal-content position-absolute top-0 align-items-center'>
+    <div className='submodal-content position-absolute top-0 align-items-center'>
       <div className='subcont'>
         <div className='title row align-items-center pt-2 px-4'>
           <div className='d-flex justify-content-between'>
@@ -51,9 +51,9 @@ const AddSubCat = ({ data, isOpen, isClose, endpoint, authToken }) => {
             <IoIcons.IoMdClose onClick={isClose} />
           </div>
         </div>
-        <div className='body mt-5 mx-4'>
+        <div className='body my-4 mx-4'>
           <form onSubmit={handleSave}>
-            <div>
+            <div className='d-flex flex-column'>
               <label>SubCategory</label>
               <input
                 type='text'

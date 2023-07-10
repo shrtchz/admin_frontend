@@ -22,7 +22,7 @@ const UploadImage = ({ handleUpload }) => {
       <label>
 
       Add Image
-      <input type="file" accept="file" onChange={handleFileUpload} /></label>
+      <input type="file" accept="file" onChange={handleFileUpload} className='d-none ' /></label>
    
     </div>
   );

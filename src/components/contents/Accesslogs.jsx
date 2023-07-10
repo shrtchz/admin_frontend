@@ -161,7 +161,7 @@ const Accesslogs = ({sidebar}) => {
      
       
   <div className='w-100'>
-    <header className='container-fluid d-flex flex-column justify-content-center'>
+    <header className='container-fluid d-flex flex-column justify-content-center '>
       <div className='row  align-items-center justify-content-between '>
           <div className='col-8'>
           <div className='d-flex  allsicons'>

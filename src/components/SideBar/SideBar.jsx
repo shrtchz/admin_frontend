@@ -19,7 +19,7 @@ const SideBar = ({ isOpen, children }) => {
       <div className={`sidebar ${isOpen ? 'close' : ''}`}>
         <>
           <div className="dash">
-            {SidebarDash.map((item, index) => (
+          {SidebarDash.map((item, index) => (
               <NavLink
                 onClick={() => showSubMenu(index)}
                 to={item.path}

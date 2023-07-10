@@ -44,18 +44,18 @@ const AddModal = ({ isOpen, isClose, endpoint, authToken }) => {
   };
  
   return (
-    <div className='modal-content position-absolute top-0 align-items-center'>
-      <div className='cont'>
+    <div className="addmodal-content   ">
+      <div className='edcont'>
         <div className='title row align-items-center pt-2 px-4'>
           <div className='d-flex justify-content-between'>
             <h5>Add Category</h5>
             <IoIcons.IoMdClose onClick={isClose} />
           </div>
         </div>
-        <div className='body mt-5 mx-4'>
+        <div className='body mt-3 mx-4'>
           <form onSubmit={handleSave}>
-            <div>
-              <label>Category</label>
+            <div className='mb-3 flex-column d-flex'>
+              <label className='py-2'>Category</label>
               <input
                 type='text'
                 id='categoryName'
@@ -63,12 +63,12 @@ const AddModal = ({ isOpen, isClose, endpoint, authToken }) => {
                 onChange={(event) => setName(event.target.value)}
               />
             </div>
-            <div className='my-3 d-flex image-container align-items-center'>
+            <div className='my-4 d-flex image-container align-items-center'>
               <UploadImage handleUpload={handleUpload} />
             </div>
-            <div className='d-flex justify-content-end m-4 '>
+            <div className='d-flex justify-content-end m-4 mt-5 '>
               <div className='d-flex justify-content-between bn'>
-                <button className='bt px-2' onClick={isClose}>
+                <button className='cancel-button px-2' onClick={isClose}>
                   Cancel
                 </button>
                 <button className='submit-button' type='submit'>

@@ -1,26 +1,40 @@
-.modal-content{
-    height: 100vh;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-    /* position: absolute; */
-    top: 0;
+.addmodal-content,.submodal-content{
+    position: fixed; 
+    z-index: 1; 
     left: 0;
-    bottom: 0;
-    z-index: 100;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center; 
+      align-items: center; 
+      display: flex; 
+
     /* background-color: green; */
    /* background-color: rgba(0, 0, 0, 0.1); */
 }
-.cont{
-    background-color: #fff;
+.edcont{
+    background-color: #fff !important;
     box-shadow: 0px 23px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     max-width: 800px;
     width: 500px;
     top: 10% !important;
-    position: absolute;
+    /* position: absolute; */
     height: 350px !important;
+    max-height: 500px;
+    /* margin: 0 30px !important; */
+   
+}
+.macont, .tpcont{
+    background-color: #fff !important;
+    box-shadow: 0px 23px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 800px;
+    width: 500px;
+    top: 10% !important;
+    /* position: absolute; */
+    height: 300px !important;
     max-height: 500px;
     /* margin: 0 30px !important; */
    
@@ -33,7 +47,7 @@
     width: 500px;
     top: 10% !important;
     position: absolute;
-    height: 500px !important;
+    height: 450px !important;
     max-height: 800px;
     /* margin: 0 30px !important; */
    
@@ -72,14 +86,20 @@ height: 50px;}
   }
   
   .submit-button:hover {
-    background-color: #0056b3;
+    background-color: rgb(68, 173, 68) !important;
+    border-radius: 4px;
   }
+.cancel-button:hover {
+    background-color: rgb(249, 47, 47) !important;
+    border-radius: 4px;
 
+  }
 .body input, .body select{
     border-radius: 8px;
     border:  1.5px solid #ADB5BD;
     box-shadow: none !important;
     outline: none !important;
+    height: 40px;
 }
 .bn{
     width: 100% ;

@@ -33,17 +33,7 @@ import Tips from './Categories/Tips'
 import AddAdmin from "./Categories/AddAdmin";
 import EditAdmin from "./EditAdmin";
 import DeleteAdmin from "./DeleteAdmin";
-// import Post from "./Posts/PostsIndex";
-// import PostsIndex from "./Posts/PostsIndex";
 
-// const useAuth=()=>{
-//   const user=localStorage.getItem('user')
-//   if(user){
-//     return true
-//   } else {
-//     return false
-//   }
-// }
 
 const Dashboard = ({onLogout}) => {
   const [isOpen, setIsOpen] = useState(false);

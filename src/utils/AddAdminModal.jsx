@@ -14,7 +14,7 @@ const AddAdminModal = ({ isOpen, isClose }) => {
     username: '',
     email: '',
     password: '',
-    password_confirmation:'',
+    password_confirmation: '',
     role: '',
     description: '',
     permissions: '',
@@ -33,29 +33,31 @@ const AddAdminModal = ({ isOpen, isClose }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-     // Check if the password and confirm password match
-  if (formData.password !== formData.password_confirmation) {
-    console.log("Passwords don't match");
-    return;
-  }
+    // Check if the password and confirm password match
+    if (formData.password !== formData.password_confirmation) {
+      console.log("Passwords don't match");
+      return;
+    }
 
 
     // Send the form data to the server using Axios
     try {
-      const authToken=localStorage.getItem('token')
-      let res= axios.post('https://shrtchz.pw/api/admin-profile/create-subadmin', formData,
-      {headers: {
-        Authorization: `Bearer ${authToken}`}
-        
-      })
-        
+      const authToken = localStorage.getItem('token')
+      let res = axios.post('https://shrtchz.pw/api/admin-profile/create-subadmin', formData,
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`
+          }
+
+        })
+
       console.log(res);
 
     } catch (error) {
-        console.error(error.response.data);
-        
+      console.error(error.response.data);
+
     }
-    
+
 
     // Clear the form after submission
     setFormData({
@@ -63,7 +65,7 @@ const AddAdminModal = ({ isOpen, isClose }) => {
       username: '',
       email: '',
       password: '',
-      password_confirmation:'',
+      password_confirmation: '',
       role: '',
       description: '',
       permissions: '',
@@ -79,32 +81,36 @@ const AddAdminModal = ({ isOpen, isClose }) => {
         </div>
         <div className="pt-1 px-3">
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className='d-flex flex-column m-2'>
               <label>Name</label>
               <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
             </div>
-            <div className="row pt-1 px-1">
-              <div className="col-6">
-                <label>Username</label>
+           
+            <div className='flex-row d-flex justify-content-between m-2'>
+              <div class="col-md-5 flex-column d-flex">
+              <label>Username</label>
                 <input type="text" name="username" value={formData.username} onChange={handleInputChange} />
               </div>
-              <div className="col-6">
-                <label>Email</label>
+              <div class="col-md-5 flex-column d-flex">
+              <label>Email</label>
+
                 <input type="text" name="email" value={formData.email} onChange={handleInputChange} />
+
               </div>
             </div>
-            <div className='row pt-1 px-2'>
-            <div className=" col-6">
+           
+            <div className='flex-row d-flex justify-content-between m-2'>
+              <div class="col-md-5 flex-column d-flex">
               <label>Password</label>
-              <input type="password" name="password" value={formData.password} onChange={handleInputChange} />
-            </div>
-            <div className=" col-6">
+                <input type="password" name="password" value={formData.password} onChange={handleInputChange} />
+              </div>
+              <div class="col-md-5 flex-column d-flex">
               <label> Confirm Password</label>
-              <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleInputChange} />
+                <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleInputChange} />
+              </div>
             </div>
-            </div>
-            <div className="row pt-1 px-2">
-              <div className="col-6">
+            <div className="flex-row d-flex justify-content-between m-2">
+              <div className="col-md-5 flex-column d-flex">
                 <div className="d-flex flex-column">
                   <label className="pb-2" htmlFor="roleSelect">
                     Role
@@ -121,7 +127,7 @@ const AddAdminModal = ({ isOpen, isClose }) => {
                   </select>
                 </div>
               </div>
-              <div className="col-6">
+              <div className="col-6 col-md-5 flex-column d-flex">
                 <div className="d-flex flex-column">
                   <label className="pb-2" htmlFor="descriptionSelect">
                     Description
@@ -156,15 +162,15 @@ const AddAdminModal = ({ isOpen, isClose }) => {
                 </select>
               </div>
             </div>
-            <div className="d-flex justify-content-end mt-3">
+            <div className="d-flex justify-content-end mt-5">
               <div className="d-flex justify-content-between bn ">
-                <button className="bt px-2 col-5 " onClick={isClose}>
+                <button className="cancel_bt px-2 col-5 " onClick={isClose}>
                   Cancel
                 </button>
-                <button className="bt px-2 col-5"  >
-                    Save
+                <button className="save_bt px-2 col-5"  >
+                  Save
                 </button>
-               
+
               </div>
             </div>
           </form>

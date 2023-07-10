@@ -62,8 +62,8 @@ const Modal = ({isOpened, isClosed, selectedColumns:initialSelectedColumns,handl
       };
   return (
     
-        <div className="modal-content position-absolute top-0 align-items-center" >
-             <div className='cont  h-50'>
+        <div className="modal-content position-absolute top-10 align-items-center justify-content-center " >
+             <div className='modcont'>
                 <div className='title d-flex m-4 justify-content-between' >
                     <h5>List Setup</h5>
                     <IoIcons.IoMdClose onClick={isClosed}/>

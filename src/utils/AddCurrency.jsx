@@ -36,17 +36,17 @@ const AddCurrency = ({isOpen, isClose, endpoint, authToken }) => {
 
 
   return (
-    <div className='modal-content position-absolute top-0 align-items-center'>
-      <div className='cont'>
+    <div className='addmodal-content position-absolute top-0 align-items-center'>
+      <div className='tpcont'>
         <div className='title row align-items-center pt-2 px-4'>
           <div className='d-flex justify-content-between'>
             <h5> Add Currency</h5>
             <IoIcons.IoMdClose onClick={isClose} />
           </div>
         </div>
-        <div className='body mt-5 mx-4'>
+        <div className='body my-4 mx-4'>
           <form onSubmit={handleSave}>
-            <div>
+            <div className='d-flex flex-column mb-2'>
               <label>Currency</label>
               <input
                 type='text'
@@ -55,7 +55,7 @@ const AddCurrency = ({isOpen, isClose, endpoint, authToken }) => {
                 onChange={(event) => setName(event.target.value)}
               />
             </div>
-            <div>
+            <div className='d-flex flex-column '>
               <label> Acronym</label>
               <input
                 type='text'
@@ -67,7 +67,7 @@ const AddCurrency = ({isOpen, isClose, endpoint, authToken }) => {
            
             <div className='d-flex justify-content-end m-4 '>
               <div className='d-flex justify-content-between bn'>
-                <button className='bt px-2' onClick={isClose}>
+                <button className='bt px-2 cancel-button' onClick={isClose}>
                   Cancel
                 </button>
                 <button className='submit-button' type='submit'>
