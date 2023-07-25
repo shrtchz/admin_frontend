@@ -1,9 +1,10 @@
 import React, { Children, useState } from "react";
-import Logo from "../../assets/images/logo.png";
-import Shrtchz from "../../assets/images/shrtchz.png";
-import AdminLogo from "../../assets/images/adminlogo.jpeg";
-import MainLogo from "../../assets/images/mainlogo.png";
-import Shrtz from '../../assets/images/shrtchz.png'
+// import Logo from "../../assets/images/logo.png"; 
+// import Shrtchz from "../../assets/images/shrtchz.png";
+// import AdminLogo from "../../assets/images/adminlogo.jpeg";
+// import MainLogo from "../../assets/images/mainlogo.png";
+// import Shrtz from '../../assets/images/shrtchz.png'
+import Logo from '../../assets/images/shortchase.png'
 import { FaSearch } from "react-icons/fa";
 import Clock from "./Clock";
 import UserInfo from "./UserInfo";
@@ -28,12 +29,12 @@ const Navbar = ({ isOpen, showSidebar, onLogout }) => {
             </Link>
 
             <Link className="logo" href="#">
-            <img
+            {/* <img
                 src={Shrtchz}
                 className=""
                 style={{ width: "100%" }}
                 alt="shrtchz"
-              />
+              /> */}
               {/* <img
                 src={MainLogo}
                 className=""
@@ -41,12 +42,12 @@ const Navbar = ({ isOpen, showSidebar, onLogout }) => {
                 alt="shrtchz"
               /> */}
            
-               {/* <img
-                src={MainLogo}
+               <img
+                src={Logo}
                 className=""
                 style={{ width: "100%" ,}}
                 alt="mainlogo"
-              /> */}
+              />
             </Link>
           </div>
           <div className="col-lg-5  d-none d-lg-flex align-items-center bd-warning">

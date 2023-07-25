@@ -82,8 +82,8 @@ const SideBar = ({ isOpen, children }) => {
       </div>
 
       <main>
-        {children}
-        <Outlet />
+        {/* {children} */}
+        {/* <Outlet /> */}
   
       </main>
     </div>

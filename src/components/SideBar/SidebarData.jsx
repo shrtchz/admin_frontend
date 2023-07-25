@@ -28,7 +28,7 @@ export const SidebarDash =[
         title:'Dashboard',
         path:'/',
         // icon:<IoGridOutline/>
-        icon:<MdIcons.MdOutlineDashboard size={18}/>
+        // icon:<MdIcons.MdOutlineDashboard size={18}/>
 
     },
     {
